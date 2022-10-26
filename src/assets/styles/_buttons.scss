@@ -1,0 +1,16 @@
+@import "./colors";
+
+@mixin button-outline {
+    background: $white;
+    border: 1px solid $primary-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+
+    &:hover {
+        background: $primary-color;
+        transition: .3s;
+        color: $white;
+    }
+}
