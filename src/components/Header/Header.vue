@@ -23,21 +23,4 @@
         
     }
 </script>
-<style lang="scss" scoped>
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 10px;
-    width: 100vw;
-    height: 50px;
-    border: 1px solid;
-
-    .header-buttons {
-        button {
-
-            background: red;
-        }
-    }
-}
-</style>
+<style lang="scss" scoped src="./style.scss" />

@@ -14,3 +14,14 @@
         color: $white;
     }
 }
+
+@mixin button-text {
+    background-color: $white;
+    border: none;
+    
+    &:hover{
+        color: $primary-color;
+        font-weight: 700;
+        transition: .7s;
+    }
+}
