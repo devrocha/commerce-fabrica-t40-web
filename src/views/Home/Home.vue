@@ -1,10 +1,18 @@
 <template>
 	<div class="container">
-		<h1>Hello World</h1>
+		<h1>O seu lugar é aqui</h1>
 		<button class="btn">
-			<span class="textButton">Clica em mim</span>
+			<span class="textButton">Novidades</span>
 		</button>
-		<span>Outra span</span>
+		<button class="btn">
+			<span class="textButton">Coleção</span>
+		</button>
+		<button class="btn">
+			<span class="textButton">Favoritos</span>
+		</button>
+		<button class="btn">
+			<span class="textButton">Meus pedidos</span>
+		</button>
 	</div>
 </template>
 

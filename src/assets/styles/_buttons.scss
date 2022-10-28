@@ -3,25 +3,31 @@
 @mixin button-outline {
     background: $white;
     border: 1px solid $primary-color;
+    margin: 20px;
+    font-weight: 400;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100px;
+    
 
     &:hover {
         background: $primary-color;
-        transition: .3s;
         color: $white;
+        transform: scale(1.3);
+        transition: .3s;
     }
 }
 
 @mixin button-text {
-    background-color: $white;
     border: none;
+    background-color: $secundary-color-light;
+    color: $gray;
     
     &:hover{
-        color: $primary-color;
-        font-weight: 700;
-        transition: .7s;
+        color: $gray;
+        font-weight: 800;
+        // transition: .3s;
     }
 }

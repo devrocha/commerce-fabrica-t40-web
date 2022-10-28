@@ -6,10 +6,10 @@
         </div>
         <div class="header-buttons">
             <button>Home</button>
-            <button>Calças</button>
-            <button>Camisetas</button>
-            <button>Vestidos</button>
-            <button>Pijamas</button>
+            <button>Feminino</button>
+            <button>Masculino</button>
+            <button>Infantil</button>
+            <button>Outlet</button>
         </div>
         <div>
             <input>
