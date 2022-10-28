@@ -1,16 +1,15 @@
 @import "@/assets/styles/index.scss";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,600&display=swap');
-
-body {
-    font-family: "Montserrat", sans-serif;
-}
 
 .container {
+    background-image: url(../../assets/images/img_background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+
     h1 {
-        color: $primary-color;
+        color: $white;
         text-align: center;
         margin-top: 30px;
-        
     }
 
     .btn {

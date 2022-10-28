@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<h1>O seu lugar é aqui</h1>
+		<h1>Quem tem estilo próprio está sempre na moda</h1>
 		<button class="btn">
 			<span class="textButton">Novidades</span>
 		</button>
