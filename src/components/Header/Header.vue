@@ -5,11 +5,11 @@
             <img src="@/assets/images/logo.png"/>
         </div>
         <div class="header-buttons">
-            <button>Home</button>
-            <button>Feminino</button>
-            <button>Masculino</button>
-            <button>Infantil</button>
-            <button>Outlet</button>
+            <router-link to="/"><button>Home</button></router-link> 
+            <router-link to="/feminino"><button>Feminino</button></router-link>
+            <router-link to="/masculino"><button>Masculino</button></router-link>
+            <router-link to="/infantil"><button>Infantil</button></router-link>
+            <router-link to="/outlet"><button>Outlet</button></router-link>
         </div>
         <div>
             <input>
