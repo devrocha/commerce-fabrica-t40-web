@@ -13,7 +13,7 @@
         </div>
         <div>
             <input>
-            <button><img src="@/assets/images/shopping-bag.svg"/></button>
+            <router-link to="/shoppingBag"><button><img src="@/assets/images/shopping-bag.svg"/></button></router-link>
             <button><img src="@/assets/images/user-circle.svg"/></button>
         </div>
     </div>
