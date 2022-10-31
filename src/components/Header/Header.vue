@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <!-- logo da loja -->
-        <div>
+        <div class="header-logo">
             <img src="@/assets/images/logo.png"/>
         </div>
         <div class="header-buttons">
@@ -11,7 +11,7 @@
             <router-link to="/infantil"><button>Infantil</button></router-link>
             <router-link to="/outlet"><button>Outlet</button></router-link>
         </div>
-        <div>
+        <div class="header-icons">
             <input>
             <router-link to="/shoppingBag"><button><img src="@/assets/images/shopping-bag.svg"/></button></router-link>
             <button><img src="@/assets/images/user-circle.svg"/></button>

@@ -2,11 +2,12 @@
 @import "./font.scss";
 
 @mixin button-outline {
-    background: $white;
-    border: 1px solid $secundary-color;
+    background: $white-transparency;
+    border: none;
+    border-radius: 15px;
     margin: 20px;
     font-family: "Montserrat", sans-serif;
-    font-weight: 400;
+    font-weight: 500;
     padding: 10px;
     display: flex;
     align-items: center;
