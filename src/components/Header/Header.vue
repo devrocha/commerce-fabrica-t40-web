@@ -1,19 +1,19 @@
 <template>
     <div class="container">
         <!-- logo da loja -->
-        <div>
+        <div class="header-logo">
             <img src="@/assets/images/logo.png"/>
         </div>
         <div class="header-buttons">
-            <button>Home</button>
-            <button>Calças</button>
-            <button>Camisetas</button>
-            <button>Vestidos</button>
-            <button>Pijamas</button>
+            <router-link to="/"><button>Home</button></router-link> 
+            <router-link to="/feminino"><button>Feminino</button></router-link>
+            <router-link to="/masculino"><button>Masculino</button></router-link>
+            <router-link to="/infantil"><button>Infantil</button></router-link>
+            <router-link to="/outlet"><button>Outlet</button></router-link>
         </div>
-        <div>
+        <div class="header-icons">
             <input>
-            <button><img src="@/assets/images/shopping-bag.svg"/></button>
+            <router-link to="/shoppingBag"><button><img src="@/assets/images/shopping-bag.svg"/></button></router-link>
             <button><img src="@/assets/images/user-circle.svg"/></button>
         </div>
     </div>

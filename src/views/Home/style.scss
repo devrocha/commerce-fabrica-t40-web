@@ -1,8 +1,15 @@
 @import "@/assets/styles/index.scss";
 
 .container {
+    background-image: url(../../assets/images/hero-banner-woman.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+
     h1 {
-        color: $primary-color;
+        color: $white;
+        text-align: center;
+        padding: 15px;
     }
 
     .btn {
