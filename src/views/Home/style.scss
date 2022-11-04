@@ -1,5 +1,5 @@
 @import "@/assets/styles/index.scss";
-
+//hero banner
 .container {
     background-image: url(../../assets/images/hero-banner-woman.jpg);
     background-repeat: no-repeat;
@@ -19,3 +19,10 @@
         font-size: 10px;
     }
 }
+//título novos produtos
+.h1-new-products{
+    text-align: center;
+    color: $gray
+}
+
+//card novos produtos
