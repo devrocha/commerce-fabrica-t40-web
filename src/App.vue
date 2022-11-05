@@ -13,11 +13,7 @@ components: {
 	<div>
 		<Header />
 		<RouterView />
-	</div>
-
-	<div>
 		<Footer/>
-		<RouterView/>
 	</div>
 </template>
 
