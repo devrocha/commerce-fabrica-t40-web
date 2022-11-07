@@ -1,0 +1,9 @@
+@import '@/assets/styles/index.scss';
+
+.btn {
+    @include button-outline;
+}
+
+.card-btn {
+    @include button-product;
+}
