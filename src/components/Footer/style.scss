@@ -4,8 +4,21 @@
     width: 30px;
 }
 
+button {
+   border: none;
+}
+
 .footer-buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.footer-text {
+    display: inline;
+}
+
+.img-text {
+    width: 20px;
+    margin-right: 10px;
 }
