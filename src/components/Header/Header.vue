@@ -16,9 +16,9 @@
         <input />
       </form>
       <router-link to="/shoppingBag"
-        ><button><img src="@/assets/images/shopping-bag.svg" /></button
+        ><button><img src="@/assets/images/shopping-bag.png" /></button
       ></router-link>
-      <button><img src="@/assets/images/user-circle.svg" /></button>
+      <button><img src="@/assets/images/user.png" /></button>
     </div>
   </div>
 </template>

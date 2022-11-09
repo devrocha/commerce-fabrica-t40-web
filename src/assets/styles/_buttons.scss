@@ -52,7 +52,13 @@
     
     &:hover{
         background: $gray-background;
+    }   
+}
+
+@mixin button-icons {
+    border: none;
+    background-color: transparent;
+    img {
+        width: 25px;
     }
-    
-    
 }
