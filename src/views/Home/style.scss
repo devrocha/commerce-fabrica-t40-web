@@ -1,15 +1,26 @@
 @import "@/assets/styles/index.scss";
 //hero banner
 .container {
-    background-image: url(../../assets/images/hero-banner-woman.jpg);
+    background-image: url(https://s3.amazonaws.com/tfh-medias/Naty-Banner.jpg?mtime=20180606175844);
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;
     position: relative;
-    h1 {
-        color: $white;
-        text-align: center;
+    .container-title {
+        color: $gray;
+        text-transform: uppercase;
         padding: 15px;
+        width: 40%;
+        position: absolute;
+        top: 200px;
+        right: 0px;
+        h1 {
+            font-weight: 400;
+            text-align: center;
+            word-wrap: break-word;
+            font-size: 38px;
+            text-decoration: underline;
+        }
     }
 
     .btn {
