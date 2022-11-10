@@ -1,21 +1,29 @@
 <template>
-  <h1>Feminino</h1>
+  <div v-for="(peca, index) in pecas" :key="index">
+    <span>
+      {{ peca.description }}
+    </span>
+  </div>
 </template>
 
 <script>
-import { usePecaStore } from "@/stores/peca";
-import { onMounted } from '@vue/runtime-core';
+import { usePecaStore } from "@/stores/peca"; //importar dentro do componente
+import { onMounted, reactive, toRefs } from "@vue/runtime-core";
 
 export default {
   setup() {
+    const data = reactive({
+      pecas: [],
+    });
     const store = usePecaStore();
 
     onMounted(async () => {
-		await store.listPecas()
-		console.log(store.pecas)
-	})
+      await store.listPecas();
+      data.pecas = store.pecas;
+    });
 
     return {
+      ...toRefs(data),
       store,
     };
   },
