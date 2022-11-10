@@ -1,4 +1,5 @@
 <template>
+  <!-- hero banner -->
   <div>
     <div class="container">
       <h1>Quem tem estilo próprio está sempre na moda</h1>
@@ -11,12 +12,14 @@
 
         <Button label="Outros" type="outline" />
       </div>
+      <!-- produtos -->
     </div>
     <section class="product">
       <h2 class="product-category">Mais Vendidos</h2>
       <div class="product-container">
         <div class="product-card">
           <div class="product-image">
+            <img src="@/assets/images/favorite.png" class="favorite-tag" />
             <span class="discount-tag">50% off</span>
             <img
               src="https://img.abercrombie.com/is/image/anf/KIC_144-2069-1446-900_prod1?policy=product-medium&wid=350&hei=438"

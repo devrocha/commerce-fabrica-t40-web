@@ -80,6 +80,18 @@
         top: 10px;
         text-transform: capitalize;
     }
+    .favorite-tag {
+        position: absolute;
+        padding: 5px;
+        left: 10px;
+        top: 10px;
+        width: 30px;
+        transition: 0.5s all ease-in-out;
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.5);
+        }
+    }
     .card-btn {
         @include button-product;
     }
