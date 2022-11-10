@@ -6,6 +6,11 @@
               <router-link to="/whatsapp"><button><img src="@/assets/images/whatsapp.png" class="img-link"/></button></router-link>
           </div>
 
+          <div class="footer-text">
+            <img src="@/assets/images/c.png" class="img-text"/>
+            <span>2022 T40 Bra, Inc. All Rights reserved</span>
+          </div>
+
           <div>
               <p>Redes Sociais</p>
               <router-link to="/instagram"><button><img src="@/assets/images/instagram.png" class="img-link"/></button></router-link>
