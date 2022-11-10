@@ -3,13 +3,13 @@
     <div class="container">
       <h1>Quem tem estilo próprio está sempre na moda</h1>
       <div class="container-btn">
-        <Button label="Novidades" type="outline"/>
+        <Button label="Novidades" type="outline" />
 
-        <Button label="Coleção" type="outline"/>
+        <Button label="Coleção" type="outline" />
 
-        <Button label="Favoritos" type="outline"/>
+        <Button label="Favoritos" type="outline" />
 
-        <Button label="Outros" type="outline"/>
+        <Button label="Outros" type="outline" />
       </div>
     </div>
     <section class="product">
@@ -22,7 +22,7 @@
               src="https://img.abercrombie.com/is/image/anf/KIC_144-2069-1446-900_prod1?policy=product-medium&wid=350&hei=438"
               class="product-thumb"
             />
-            <Button label="Adicionar aos favoritos"/>
+            <Button label="Adicionar aos favoritos" />
             <!-- <button class="card-btn">adicionar aos favoritos</button> -->
           </div>
           <div class="product-info">
@@ -41,7 +41,7 @@
               src="https://img.abercrombie.com/is/image/anf/KIC_144-2069-1446-900_prod1?policy=product-medium&wid=350&hei=438"
               class="product-thumb"
             />
-            <Button label="Adicionar aos favoritos"/>
+            <Button label="Adicionar aos favoritos" />
           </div>
           <div class="product-info">
             <h2 class="product-brand">brand</h2>
@@ -59,7 +59,7 @@
               src="https://img.abercrombie.com/is/image/anf/KIC_144-2069-1446-900_prod1?policy=product-medium&wid=350&hei=438"
               class="product-thumb"
             />
-            <Button label="Adicionar aos favoritos"/>
+            <Button label="Adicionar aos favoritos" />
           </div>
           <div class="product-info">
             <h2 class="product-brand">brand</h2>
@@ -77,7 +77,7 @@
               src="https://img.abercrombie.com/is/image/anf/KIC_144-2069-1446-900_prod1?policy=product-medium&wid=350&hei=438"
               class="product-thumb"
             />
-            <Button label="Adicionar aos favoritos"/>
+            <Button label="Adicionar aos favoritos" />
           </div>
           <div class="product-info">
             <h2 class="product-brand">brand</h2>
@@ -94,11 +94,11 @@
 </template>
 
 <script>
-import Button from "@/components/Button/Button.vue"
+import Button from "@/components/Button/Button.vue";
 export default {
-  components:{
+  components: {
     Button,
-  }
+  },
 };
 </script>
 
