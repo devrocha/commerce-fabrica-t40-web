@@ -15,8 +15,8 @@
 
         <Button label="Outros" type="outline" />
       </div>
-      <!-- produtos -->
     </div>
+    <!-- produtos -->
     <section class="product">
       <h2 class="product-category">Mais Vendidos</h2>
       <div class="product-container">
