@@ -1,13 +1,14 @@
 @import "@/assets/styles/index.scss";
 //hero banner
 .container {
-    background-image: url(https://s3.amazonaws.com/tfh-medias/Naty-Banner.jpg?mtime=20180606175844);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.333), rgba(0, 0, 0, 0.333)), url("../../assets/images/hero-banner.png");
+    background-color: $primary-color-light;
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;
     position: relative;
     .container-title {
-        color: $gray;
+        color: $white;
         text-transform: uppercase;
         padding: 15px;
         width: 40%;
@@ -15,10 +16,12 @@
         top: 200px;
         right: 0px;
         h1 {
-            font-weight: 400;
+            font-weight: 600;
             text-align: center;
             word-wrap: break-word;
             font-size: 38px;
+        }
+        #container-title-underlined {
             text-decoration: underline;
         }
     }

@@ -4,7 +4,7 @@
     <div class="container">
       <div class="container-title">
         <h1>Quem tem estilo próprio</h1>
-        <h1>está sempre na moda</h1>
+        <h1 id="container-title-underlined">está sempre na moda</h1>
       </div>
       <div class="container-btn">
         <Button label="Novidades" type="outline" />
