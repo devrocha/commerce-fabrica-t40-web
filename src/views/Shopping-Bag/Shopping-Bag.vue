@@ -1,7 +1,7 @@
 <template>
   <!-- cabeçalho do carrinho -->
   <div class="cart-header">
-    <img src="@/assets/images/shopping-bag.svg" />
+    <img src="@/assets/images/shopping-bag.png" />
     <h1>Carrinho</h1>
     <input type="text" placeholder="CEP" />
   </div>
