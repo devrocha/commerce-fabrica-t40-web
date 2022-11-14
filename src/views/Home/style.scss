@@ -1,15 +1,29 @@
 @import "@/assets/styles/index.scss";
 //hero banner
 .container {
-    background-image: url(../../assets/images/hero-banner-woman.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.27), rgba(0, 0, 0, 0.273)), url("../../assets/images/hero-banner.jpg");
+    background-color: $primary-color-light;
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;
     position: relative;
-    h1 {
+    .container-title {
         color: $white;
-        text-align: center;
+        text-transform: uppercase;
         padding: 15px;
+        width: 40%;
+        position: absolute;
+        top: 200px;
+        right: 0px;
+        h1 {
+            font-weight: 600;
+            text-align: center;
+            word-wrap: break-word;
+            font-size: 38px;
+        }
+        #container-title-underlined {
+            text-decoration: underline;
+        }
     }
 
     .btn {

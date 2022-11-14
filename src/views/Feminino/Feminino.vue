@@ -9,19 +9,16 @@
 <script>
 import { usePecaStore } from "@/stores/peca"; //importar dentro do componente
 import { onMounted, reactive, toRefs } from "@vue/runtime-core";
-
 export default {
   setup() {
     const data = reactive({
       pecas: [],
     });
     const store = usePecaStore();
-
     onMounted(async () => {
       await store.listPecas();
       data.pecas = store.pecas;
     });
-
     return {
       ...toRefs(data),
       store,
