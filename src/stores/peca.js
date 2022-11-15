@@ -8,8 +8,12 @@ export const usePecaStore = defineStore({
   actions: {
     async listPecas() {
       const response = await pecasApi.getPecas();
-      console.log(response.data.data);
       this.pecas = response.data.data;
     },
+
+    async createPeca(peca) {
+      const response = await pecasApi.createPecas(peca)
+      return response
+    }
   },
 });
