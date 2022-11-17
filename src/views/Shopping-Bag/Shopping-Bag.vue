@@ -1,3 +1,7 @@
+<script>
+export default {};
+</script>
+
 <template>
   <!-- cabeçalho do carrinho -->
   <div class="cart-header">
@@ -37,9 +41,5 @@
     <button>Comprar</button>
   </div>
 </template>
-
-<script>
-export default {};
-</script>
 
 <style src="./style.scss" scoped lang="scss" />

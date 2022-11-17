@@ -1,3 +1,12 @@
+<script>
+import Button from "@/components/Button/Button.vue";
+export default {
+  components: {
+    Button,
+  },
+};
+</script>
+
 <template>
   <!-- hero banner -->
   <div>
@@ -43,14 +52,5 @@
     </section>
   </div>
 </template>
-
-<script>
-import Button from "@/components/Button/Button.vue";
-export default {
-  components: {
-    Button,
-  },
-};
-</script>
 
 <style src="./style.scss" scoped lang="scss" />

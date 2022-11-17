@@ -2,16 +2,14 @@
 export default {
   props: {
     label: String,
-    color: String,
   },
 };
 </script>
 
 <template>
   <div>
-    <v-btn :color="color">
-      <span>{{ label }}</span>
-    </v-btn>
+    <label>{{ label }}</label>
+    <input />
   </div>
 </template>
 

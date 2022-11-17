@@ -1,34 +1,47 @@
-<template>
-  <input type="text" v-model="name" />
-  <input type="text" v-model="description" />
-  <p>{{ text }}</p>
-</template>
-
 <script>
-import { usePecaStore } from "@/stores/peca";
+// import { usePecaStore } from "@/stores/peca";
 import { reactive, toRefs } from "@vue/reactivity";
+
+import CreatePecaModal from "@/views/Pecas/components/modal/CreatePecaModal.vue";
+
 export default {
+  components: {
+    CreatePecaModal,
+  },
   setup() {
     const data = reactive({
-      name: "",
-      description: "",
+      openModal: false,
     });
 
-    const store = usePecaStore();
-
-    const createPeca = async () => {
-      const peca = {
-        name: data.name,
-        description: data.description,
-      };
-      await store.createPeca(peca);
+    const handleClickOpenModal = () => {
+      data.openModal = !data.openModal;
     };
+
+    // const store = usePecaStore();
+
+    // const createPeca = async () => {
+    //   const peca = {
+    //     name: data.name,
+    //     description: data.description,
+    //   };
+    //   await store.createPeca(peca);
+    // };
 
     return {
       ...toRefs(data),
+      handleClickOpenModal,
     };
   },
 };
 </script>
+
+<template>
+  <div>
+    <v-btn variant="flat" color="error" @click="handleClickOpenModal()">
+      Ola mundo
+    </v-btn>
+    <CreatePecaModal :openModal="openModal" @closeModal="openModal = $event" />
+  </div>
+</template>
 
 <style src="./style.scss" scoped lang="scss" />

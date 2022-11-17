@@ -1,13 +1,3 @@
-<template>
-  <div class="container">
-    <div v-for="(peca, index) in pecas" :key="index" class="container__pecas">
-      <Image :source="peca.image" alt="Imagens das peças cadastradas" />
-      <p>Descrição: {{ peca.description }}</p>
-      <p>Preço: R$ {{ conversion(peca.price) }}</p>
-    </div>
-  </div>
-</template>
-
 <script>
 import { usePecaStore } from "@/stores/peca"; //importar dentro do componente
 import { onMounted, reactive, toRefs } from "@vue/runtime-core";
@@ -23,7 +13,7 @@ export default {
   setup() {
     const data = reactive({
       pecas: [],
-      value: 100
+      value: 100,
     });
 
     const store = usePecaStore();
@@ -35,21 +25,31 @@ export default {
     });
 
     const computedPecaValue = computed(() => {
-      return data.value >= 100 ? 'Preço justo' : 'Em oferta'
-    })
+      return data.value >= 100 ? "Preço justo" : "Em oferta";
+    });
 
     const computedLession = () => {
-      const pecaPrice = data.pecas.filter((peca) => peca.price > 100)
+      const pecaPrice = data.pecas.filter((peca) => peca.price > 100);
     };
 
     return {
       ...toRefs(data),
       store,
       conversion,
-      computedPecaValue
+      computedPecaValue,
     };
   },
 };
 </script>
+
+<template>
+  <div class="container">
+    <div v-for="(peca, index) in pecas" :key="index" class="container__pecas">
+      <Image :source="peca.image" alt="Imagens das peças cadastradas" />
+      <p>Descrição: {{ peca.description }}</p>
+      <p>Preço: R$ {{ conversion(peca.price) }}</p>
+    </div>
+  </div>
+</template>
 
 <style src="./style.scss" scoped lang="scss" />

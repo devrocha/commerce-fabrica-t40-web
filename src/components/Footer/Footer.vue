@@ -1,3 +1,7 @@
+<script>
+export default {};
+</script>
+
 <template>
   <div class="footer-buttons">
     <div class="footer-left">
@@ -30,7 +34,5 @@
     </div>
   </div>
 </template>
-<script>
-export default {};
-</script>
+
 <style lang="scss" scoped src="./style.scss" />

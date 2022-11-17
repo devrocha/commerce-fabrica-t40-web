@@ -1,19 +1,25 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 
-import Header from "@/components/Header/Header.vue";
-import Footer from "@/components/Footer/Footer.vue";
 import App from "./App.vue";
 import router from "./router";
 
 import "@/assets/styles/index.scss";
 
-const app = createApp(App);
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 
-app.component("Header", Header);
-app.component("Footer", Footer);
+const vuetify = createVuetify({
+    components,
+    directives,
+})
+
+const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
+app.use(vuetify);
 
 app.mount("#app");

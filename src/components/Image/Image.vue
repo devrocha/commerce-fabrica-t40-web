@@ -1,7 +1,3 @@
-<template>
-  <img :src="source" :alt="alt" />
-</template>
-
 <script>
 export default {
   props: {
@@ -10,6 +6,10 @@ export default {
   },
 };
 </script>
+
+<template>
+  <img :src="source" :alt="alt" />
+</template>
 
 <style  src="./style.scss" scoped lang="scss">
 </style>

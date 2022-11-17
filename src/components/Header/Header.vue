@@ -1,3 +1,7 @@
+<script>
+export default {};
+</script>
+
 <template>
   <div class="container">
     <!-- logo da loja -->
@@ -22,7 +26,5 @@
     </div>
   </div>
 </template>
-<script>
-export default {};
-</script>
+
 <style lang="scss" scoped src="./style.scss" />
