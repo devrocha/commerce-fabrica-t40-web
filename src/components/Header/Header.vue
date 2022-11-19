@@ -3,9 +3,36 @@ export default {};
 </script>
 
 <template>
-  <div class="container">
-    <!-- logo da loja -->
-    <div class="header-logo">
+  <v-app>
+    <v-toolbar color="#d0bdf4a3" elevation="4">
+      <v-toolbar-title><img src="@/assets/images/logo.png" /></v-toolbar-title>
+
+      <v-spacer>
+        <v-btn>Feminino</v-btn>
+        <v-btn>Masculino</v-btn>
+        <v-btn>Infantil</v-btn>
+        <v-btn>Outlet</v-btn>
+      </v-spacer>
+      <input type="text" v-model="input" placeholder="Buscar peça" />
+      <v-col class="ma-2">
+        <v-row justify="end">
+          <v-btn
+            ><img
+              src="@/assets/images/shopping-bag.png"
+              width="30"
+              height="30"
+            />
+          </v-btn>
+          <v-btn
+            ><img src="@/assets/images/user.png" width="30" height="30" />
+          </v-btn>
+        </v-row>
+      </v-col>
+    </v-toolbar>
+  </v-app>
+  <!-- <div class="container"> -->
+  <!-- logo da loja -->
+  <!-- <div class="header-logo">
       <img src="@/assets/images/logo.png" />
     </div>
     <div class="header-buttons">
@@ -24,7 +51,7 @@ export default {};
       ></router-link>
       <button><img src="@/assets/images/user.png" /></button>
     </div>
-  </div>
+  </div> -->
 </template>
 
-<style lang="scss" scoped src="./style.scss" />
+<!-- <style lang="scss" scoped src="./style.scss" /> -->
