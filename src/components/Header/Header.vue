@@ -13,7 +13,6 @@ export default {};
         >
         <router-link
           to="/feminino"
-          justify="space-around"
           style="text-decoration: none; color: inherit"
           ><v-button>Feminino</v-button></router-link
         >
