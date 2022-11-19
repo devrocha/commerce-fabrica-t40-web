@@ -8,10 +8,26 @@ export default {};
       <v-toolbar-title><img src="@/assets/images/logo.png" /></v-toolbar-title>
 
       <v-spacer>
-        <v-btn>Feminino</v-btn>
-        <v-btn>Masculino</v-btn>
-        <v-btn>Infantil</v-btn>
-        <v-btn>Outlet</v-btn>
+        <router-link to="/" style="text-decoration: none; color: inherit"
+          ><v-button>Home</v-button></router-link
+        >
+        <router-link
+          to="/feminino"
+          justify="space-around"
+          style="text-decoration: none; color: inherit"
+          ><v-button>Feminino</v-button></router-link
+        >
+        <router-link
+          to="/masculino"
+          style="text-decoration: none; color: inherit"
+        >
+          <v-button>Masculino</v-button></router-link
+        >
+        <router-link
+          to="/infantil"
+          style="text-decoration: none; color: inherit"
+          ><v-button>Infantil</v-button></router-link
+        >
       </v-spacer>
       <input type="text" v-model="input" placeholder="Buscar peça" />
       <v-col class="ma-2">
