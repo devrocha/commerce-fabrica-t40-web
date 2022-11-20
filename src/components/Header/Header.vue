@@ -37,9 +37,14 @@ export default {};
     <input type="text" v-model="input" placeholder="Buscar peça" />
     <v-col class="ma-2">
       <v-row justify="end">
-        <v-btn
-          ><img src="@/assets/images/shopping-bag.png" width="30" height="30" />
-        </v-btn>
+        <router-link to="/shoppingBag"
+          ><v-btn
+            ><img
+              src="@/assets/images/shopping-bag.png"
+              width="30"
+              height="30"
+            /> </v-btn
+        ></router-link>
         <v-btn
           ><img src="@/assets/images/user.png" width="30" height="30" />
         </v-btn>
