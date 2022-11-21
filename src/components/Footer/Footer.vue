@@ -3,36 +3,48 @@ export default {};
 </script>
 
 <template>
-  <div class="footer-buttons">
-    <div class="footer-left">
+  <v-toolbar color="#46AFA5" elevation="4">
+    <v-spacer>
       <p>Fale Conosco</p>
       <router-link to="/email"
-        ><button>
-          <img src="@/assets/images/o-email.png" class="img-link" /></button
+        ><v-button>
+          <img
+            src="@/assets/images/o-email.png"
+            width="30"
+            height="30" /></v-button
       ></router-link>
       <router-link to="/whatsapp"
-        ><button>
-          <img src="@/assets/images/whatsapp.png" class="img-link" /></button
+        ><v-button>
+          <img
+            src="@/assets/images/whatsapp.png"
+            width="30"
+            height="30" /></v-button
       ></router-link>
-    </div>
+    </v-spacer>
 
-    <div class="footer-text">
-      <img src="@/assets/images/c.png" class="img-text" />
+    <v-spacer>
+      <img src="@/assets/images/c.png" width="20" height="20" />
       <span>2022 T40 Bra, Inc. All Rights reserved</span>
-    </div>
+    </v-spacer>
 
-    <div class="footer-right">
+    <v-spacer>
       <p>Redes Sociais</p>
       <router-link to="/instagram"
-        ><button>
-          <img src="@/assets/images/instagram.png" class="img-link" /></button
+        ><v-button>
+          <img
+            src="@/assets/images/instagram.png"
+            width="30"
+            height="30" /></v-button
       ></router-link>
       <router-link to="/facebook"
-        ><button>
-          <img src="@/assets/images/facebook.png" class="img-link" /></button
+        ><v-button>
+          <img
+            src="@/assets/images/facebook.png"
+            width="30"
+            height="30" /></v-button
       ></router-link>
-    </div>
-  </div>
+    </v-spacer>
+  </v-toolbar>
 </template>
 
-<style lang="scss" scoped src="./style.scss" />
+<!-- <style lang="scss" scoped src="./style.scss" /> -->
