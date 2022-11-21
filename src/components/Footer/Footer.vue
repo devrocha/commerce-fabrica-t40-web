@@ -3,23 +3,27 @@ export default {};
 </script>
 
 <template>
-  <v-toolbar color="#46AFA5" elevation="4">
+  <v-toolbar color="#46AFA5">
     <v-spacer>
+      <v-col class="ma-2">
+      <v-row justify="start">
       <p>Fale Conosco</p>
       <router-link to="/email"
-        ><v-button>
+        ><v-btn>
           <img
             src="@/assets/images/o-email.png"
             width="30"
-            height="30" /></v-button
+            height="30" /></v-btn
       ></router-link>
       <router-link to="/whatsapp"
-        ><v-button>
+        ><v-btn>
           <img
             src="@/assets/images/whatsapp.png"
             width="30"
-            height="30" /></v-button
+            height="30" /></v-btn
       ></router-link>
+    </v-row>
+  </v-col>
     </v-spacer>
 
     <v-spacer>
@@ -28,21 +32,23 @@ export default {};
     </v-spacer>
 
     <v-spacer>
+      <v-row justify="end">
       <p>Redes Sociais</p>
       <router-link to="/instagram"
-        ><v-button>
+        ><v-btn>
           <img
             src="@/assets/images/instagram.png"
             width="30"
-            height="30" /></v-button
+            height="30" /></v-btn
       ></router-link>
       <router-link to="/facebook"
-        ><v-button>
+        ><v-btn>
           <img
             src="@/assets/images/facebook.png"
             width="30"
-            height="30" /></v-button
+            height="30" /></v-btn
       ></router-link>
+      </v-row>
     </v-spacer>
   </v-toolbar>
 </template>
