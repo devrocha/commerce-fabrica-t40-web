@@ -27,11 +27,17 @@ export default {};
       >
         <v-button>Masculino</v-button></router-link
       >
-      <router-link
+      <!-- <router-link
         to="/infantil"
         style="text-decoration: none; color: inherit"
         class="mx-6"
         ><v-button>Infantil</v-button></router-link
+      > -->
+      <router-link
+        to="/registrar"
+        style="text-decoration: none; color: inherit"
+        class="mx-6"
+        ><v-button>Registrar Peça</v-button></router-link
       >
     </v-spacer>
     <input type="text" v-model="input" placeholder="Buscar peça" />
@@ -45,9 +51,14 @@ export default {};
               height="30"
             /> </v-btn
         ></router-link>
-        <v-btn
-          ><img src="@/assets/images/user.png" width="30" height="30" />
-        </v-btn>
+        <router-link to="/login">
+          <v-btn
+            ><img
+              src="@/assets/images/user.png"
+              width="30"
+              height="30"
+            /> </v-btn
+        ></router-link>
       </v-row>
     </v-col>
   </v-toolbar>
