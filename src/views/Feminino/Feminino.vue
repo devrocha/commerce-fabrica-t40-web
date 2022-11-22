@@ -4,10 +4,14 @@ import { onMounted, reactive, toRefs } from "@vue/runtime-core";
 import { conversion } from "@/utils/index";
 import Image from "@/components/Image/Image.vue";
 import { computed } from "@vue/reactivity";
+import Button from "@/components/Button/Button.vue";
+import Card from "@/components/Card/Card.vue";
 
 export default {
   components: {
     Image,
+    Button,
+    Card,
   },
 
   setup() {
@@ -65,3 +69,4 @@ export default {
     </v-card>
   </div>
 </template>
+
