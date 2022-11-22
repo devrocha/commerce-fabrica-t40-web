@@ -11,9 +11,9 @@ export default {
 </script>
 
 <template>
-  <div>
+  <v-main>
     <Header />
     <RouterView />
     <Footer />
-  </div>
+  </v-main>
 </template>

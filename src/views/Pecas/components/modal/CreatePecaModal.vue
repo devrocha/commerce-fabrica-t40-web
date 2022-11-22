@@ -39,6 +39,3 @@ export default {
     </v-card>
   </v-dialog>
 </template>
-
-<style src="./style.scss" scoped lang="scss">
-</style>

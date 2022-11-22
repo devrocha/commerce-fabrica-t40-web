@@ -65,14 +65,3 @@ export default {
     </v-card>
   </div>
 </template>
-
-<!-- <style src="./style.scss" scoped lang="scss" /> -->
-
-
-<!-- <div class="container">
-  <div v-for="(peca, index) in pecas" :key="index" class="container__pecas">
-    <Image :source="peca.image" alt="Imagens das peças cadastradas" />
-    <p>Descrição: {{ peca.description }}</p>
-    <p>Preço: R$ {{ conversion(peca.price) }}</p>
-  </div>
-</div> -->
