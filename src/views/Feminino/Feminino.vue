@@ -64,7 +64,18 @@ export default {
       <v-row align="center" class="mx-0">
         <v-card-title>{{ peca.name }}</v-card-title>
         <v-card-subtitle>{{ peca.description }}</v-card-subtitle>
-        <div class="my-4 text-subtitle-1">R$ {{ conversion(peca.price) }}</div>
+        <v-row>
+          <v-col col="6">
+            <div class="my-4 text-subtitle-1">
+              R$ {{ conversion(peca.price) }}
+            </div>
+          </v-col>
+          <v-col col="6">
+            <v-btn
+              ><img src="@/assets/images/cesta.png" width="20" height="20"
+            /></v-btn>
+          </v-col>
+        </v-row>
       </v-row>
     </v-card>
   </div>

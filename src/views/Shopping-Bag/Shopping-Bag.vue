@@ -65,11 +65,6 @@ export default {
       <v-list-tile-action>
         <v-btn><img src="@/assets/images/trash.png" /></v-btn>
       </v-list-tile-action>
-      <v-list-tile-action>
-        <v-btn
-          ><img src="@/assets/images/cesta.png" width="20" height="20"
-        /></v-btn>
-      </v-list-tile-action>
     </v-list>
   </v-container>
   <v-container>
