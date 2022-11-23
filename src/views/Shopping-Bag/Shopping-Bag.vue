@@ -44,30 +44,36 @@ export default {
 
 <template>
   <h2 class="display-2 mb-4">Carrinho</h2>
-  <v-container v-for="(peca, index) in pecas" :key="index">
-    <v-list>
-      <v-list-tile-avatar>
-        <v-img :src="peca.image" height="100px"></v-img>
-      </v-list-tile-avatar>
-      <v-list-tile-content>
-        <v-list-tile-title>{{ peca.name }}</v-list-tile-title>
-      </v-list-tile-content>
-      <v-list-tile>R$ {{ conversion(peca.price) }}</v-list-tile>
-      <v-list-tile-action>
-        <v-text-field
-          label="Quantidade"
-          v-model="numberValue"
-          hide-details
-          single-line
-          type="number"
-        />
-      </v-list-tile-action>
-      <v-list-tile-action>
-        <v-btn><img src="@/assets/images/trash.png" /></v-btn>
-      </v-list-tile-action>
-    </v-list>
-  </v-container>
-  <v-container>
-    <v-btn color="success" larger style="float: right">Pagamento</v-btn>
-  </v-container>
+  <div>
+    <v-row no-gutters>
+      <v-col cols="12" v-for="(peca, index) in pecas" :key="index" class="mb-2">
+        <v-card class="pa-3">
+          <div class="d-flex justify-space-between align-center">
+            <div>
+              <v-card-title>
+                {{ peca.name }}
+              </v-card-title>
+              <v-card-subtitle>R$ {{ conversion(peca.price) }}</v-card-subtitle>
+              <v-img :src="peca.image" height="50px"></v-img>
+            </div>
+            <div>
+              <v-card-action>
+                <v-btn> + </v-btn>
+                <v-btn> - </v-btn>
+              </v-card-action>
+            </div>
+            <v-card-action>
+              <v-btn><img src="@/assets/images/trash.png" /></v-btn>
+            </v-card-action>
+          </div>
+        </v-card>
+      </v-col>
+    </v-row>
+
+    <div class="d-flex justify-start mb-6">
+      <h3 class="ma-6">Total</h3>
+      <span>R$</span>
+      <v-btn color="success" larger style="float: right">Pagamento</v-btn>
+    </div>
+  </div>
 </template>
