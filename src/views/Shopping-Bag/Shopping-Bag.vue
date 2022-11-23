@@ -53,9 +53,12 @@ export default {
               <v-card-title>
                 {{ peca.name }}
               </v-card-title>
-              <v-card-subtitle>R$ {{ conversion(peca.price) }}</v-card-subtitle>
-              <v-img :src="peca.image" height="50px"></v-img>
             </div>
+            <v-img :src="peca.image" height="50px"></v-img>
+            <div>
+              <v-card-subtitle>R$ {{ conversion(peca.price) }}</v-card-subtitle>
+            </div>
+
             <div>
               <v-card-action>
                 <v-btn> + </v-btn>
