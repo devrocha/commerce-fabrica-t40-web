@@ -1,11 +1,34 @@
 <script>
 import Button from "@/components/Button/Button.vue";
 import Card from "@/components/Card/Card.vue";
+import { usePecaStore } from "@/stores/peca";
+import { reactive, toRefs } from "@vue/reactivity";
+import { onMounted } from "@vue/runtime-core";
 
 export default {
   components: {
     Button,
     Card,
+  },
+
+  setup() {
+    const data = reactive({
+      pecas: [],
+    });
+
+    const store = usePecaStore();
+
+    onMounted(async () => {
+      await store.listPecas();
+      data.pecas = store.pecas;
+    });
+
+    console.log(store.pecas);
+
+    return {
+      ...toRefs(data),
+      store,
+    };
   },
 };
 </script>
@@ -36,9 +59,15 @@ export default {
       </v-img>
     </v-card>
     <!-- pecas -->
-    <Card
-      src="https://img.abercrombie.com/is/image/anf/KIC_144-2069-1446-900_prod1?policy=product-medium&wid=350&hei=438"
-      label="jaqueta"
-    />
+    <v-row>
+      <v-col lg="2" v-for="(peca, index) in pecas" :key="index">
+        <Card
+          :src="peca.image"
+          :title="peca.name"
+          :price="peca.price"
+          :size="peca.size"
+        />
+      </v-col>
+    </v-row>
   </v-container>
 </template>

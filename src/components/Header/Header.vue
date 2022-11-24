@@ -15,52 +15,38 @@ export default {
 
 <template>
   <v-toolbar color="#d0bdf4a3" elevation="4">
-    <v-row align="center">
-      <v-col cols="2">
+    <v-row class="d-flex align-center">
+      <v-col sm="2" md="3" lg="2" align="center">
         <v-toolbar-title
           ><img src="@/assets/images/logo.png"
         /></v-toolbar-title>
       </v-col>
 
-      <v-col cols="6">
-        <router-link
-          to="/"
-          style="text-decoration: none; color: inherit"
-          class="mx-6"
-          ><v-btn>Home</v-btn></router-link
-        >
-        <router-link
-          to="/feminino"
-          style="text-decoration: none; color: inherit"
-          class="mx-6"
-          ><v-btn>Feminino</v-btn></router-link
-        >
-        <router-link
-          to="/masculino"
-          style="text-decoration: none; color: inherit"
-          class="mx-6"
-        >
-          <v-btn>Masculino</v-btn></router-link
-        >
-        <router-link
-          to="/registrar"
-          style="text-decoration: none; color: inherit"
-          class="mx-6"
-          ><v-btn>Registrar Peça</v-btn></router-link
-        >
+      <v-col sm="7" md="6" lg="8" align="center">
+        <v-row class="d-flex justify-space-around">
+          <router-link to="/" style="text-decoration: none; color: inherit"
+            ><v-btn>Home</v-btn></router-link
+          >
+          <router-link
+            to="/feminino"
+            style="text-decoration: none; color: inherit"
+            ><v-btn>Feminino</v-btn></router-link
+          >
+          <router-link
+            to="/masculino"
+            style="text-decoration: none; color: inherit"
+          >
+            <v-btn>Masculino</v-btn></router-link
+          >
+          <router-link
+            to="/registrar"
+            style="text-decoration: none; color: inherit"
+            ><v-btn>Registrar Peça</v-btn></router-link
+          >
+        </v-row>
       </v-col>
 
-      <v-col cols="3">
-        <v-text-field
-          v-model="input"
-          variant="outlined"
-          hide-details
-          placeholder="Buscar peças"
-          class="w-50"
-        />
-      </v-col>
-
-      <v-col cols="1">
+      <v-col sm="3" md="3" lg="2" align="center">
         <router-link to="/shoppingBag">
           <v-btn>
             <img

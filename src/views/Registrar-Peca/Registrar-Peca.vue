@@ -1,5 +1,5 @@
 <script>
-// import { usePecaStore } from "@/stores/peca";
+import { usePecaStore } from "@/stores/peca";
 import { reactive, toRefs } from "@vue/reactivity";
 
 import CreatePecaModal from "@/views/Pecas/components/modal/CreatePecaModal.vue";
@@ -17,15 +17,15 @@ export default {
       data.openModal = !data.openModal;
     };
 
-    // const store = usePecaStore();
+    const store = usePecaStore();
 
-    // const createPeca = async () => {
-    //   const peca = {
-    //     name: data.name,
-    //     description: data.description,
-    //   };
-    //   await store.createPeca(peca);
-    // };
+    const createPeca = async () => {
+      const peca = {
+        name: data.name,
+        description: data.description,
+      };
+      await store.createPeca(peca);
+    };
 
     return {
       ...toRefs(data),
@@ -38,7 +38,7 @@ export default {
 <template>
   <div>
     <v-btn variant="flat" color="error" @click="handleClickOpenModal()">
-      Ola mundo
+      Cadastrar Peça
     </v-btn>
     <CreatePecaModal :openModal="openModal" @closeModal="openModal = $event" />
   </div>
