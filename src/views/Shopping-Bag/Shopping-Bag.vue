@@ -1,45 +1,82 @@
 <script>
-export default {};
+import { usePecaStore } from "@/stores/peca"; //importar dentro do componente
+import { onMounted, reactive, toRefs } from "@vue/runtime-core";
+import { conversion } from "@/utils/index";
+import Image from "@/components/Image/Image.vue";
+import { computed } from "@vue/reactivity";
+
+export default {
+  components: {
+    Image,
+  },
+
+  setup() {
+    const data = reactive({
+      pecas: [],
+      value: 100,
+    });
+
+    const store = usePecaStore();
+
+    onMounted(async () => {
+      await store.listPecas();
+      data.pecas = store.pecas;
+      computedLession();
+    });
+
+    const computedPecaValue = computed(() => {
+      return data.value >= 100 ? "Preço justo" : "Em oferta";
+    });
+
+    const computedLession = () => {
+      const pecaPrice = data.pecas.filter((peca) => peca.price > 100);
+    };
+
+    return {
+      ...toRefs(data),
+      store,
+      conversion,
+      computedPecaValue,
+    };
+  },
+};
 </script>
 
 <template>
-  <!-- cabeçalho do carrinho -->
-  <div class="cart-header">
-    <img src="@/assets/images/shopping-bag.png" />
-    <h1>Carrinho</h1>
-    <input type="text" placeholder="CEP" />
-  </div>
-  <!-- div com ítens do carrinho -->
-  <div class="cart-items">
-    <table>
-      <thead></thead>
-      <tbody>
-        <tr>
-          <td>
-            <img src="@/assets/products-img/tênis 1.png" class="cart-product" />
-          </td>
-          <td>Tênis Branco Masculino Marca Tamanho 40</td>
-          <td><button>botão</button></td>
-          <td>R$200</td>
-          <td>
-            <img src="@/assets/images/trash-can.png" class="cart-trash" />
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <!-- footer do carrinho -->
-  <div class="cart-footer">
-    <div>
-      <p class="shipping-text">Frete:</p>
-      <p class="shipping-cost">R$20,00</p>
+  <h2 class="display-2 mb-4">Carrinho</h2>
+  <div>
+    <v-row no-gutters>
+      <v-col cols="12" v-for="(peca, index) in pecas" :key="index" class="mb-2">
+        <v-card class="pa-3">
+          <div class="d-flex justify-space-between align-center">
+            <div>
+              <v-card-title>
+                {{ peca.name }}
+              </v-card-title>
+            </div>
+            <v-img :src="peca.image" height="50px"></v-img>
+            <div>
+              <v-card-subtitle>R$ {{ conversion(peca.price) }}</v-card-subtitle>
+            </div>
+
+            <div>
+              <v-card-action>
+                <v-btn> + </v-btn>
+                <v-btn> - </v-btn>
+              </v-card-action>
+            </div>
+            <v-card-action>
+              <v-btn><img src="@/assets/images/trash.png" /></v-btn>
+            </v-card-action>
+          </div>
+        </v-card>
+      </v-col>
+    </v-row>
+
+    <div class="d-flex justify-start mb-6">
+      <h3 class="ma-6">Total</h3>
+      <span>R$</span>
+      <v-btn color="success" larger style="float: right">Pagamento</v-btn>
     </div>
-    <div>
-      <p class="total-text">Total:</p>
-      <p class="total-cost">R$220,00</p>
-    </div>
-    <button>Comprar</button>
   </div>
 </template>
-
-<style src="./style.scss" scoped lang="scss" />

@@ -1,4 +1,4 @@
 export const conversion = (value) => {
-    return `${value.toFixed(2).replace('.', ',')}`
+    return `R$ ${value.toFixed(2).replace('.', ',')}`
 }
 

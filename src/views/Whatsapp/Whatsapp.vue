@@ -5,5 +5,3 @@ export default {};
 <template>
 	<h1>Teste whatsapp</h1>
 </template>
-
-<style src="./style.scss" scoped lang="scss" />

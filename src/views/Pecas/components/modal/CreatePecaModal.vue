@@ -1,5 +1,7 @@
 <script>
 import Input from "@/components/Input/Input.vue";
+import { reactive, toRefs } from "@vue/reactivity";
+import { usePecaStore } from "@/stores/peca";
 
 export default {
   components: {
@@ -9,13 +11,41 @@ export default {
   props: {
     openModal: Boolean,
   },
-  setup(props, context) {
+  setup(_, context) {
+    const data = reactive({
+      name: "",
+      description: "",
+      price: '',
+      image: "",
+      size: "",
+      color: "",
+      category: {},
+    });
+
+    const storePeca = usePecaStore();
+
     const handleClickCancel = () => {
       context.emit("closeModal", false);
     };
 
+    const handleClickSave = async () => {
+      const peca = {
+        name: data.name,
+        description: data.description,
+        price: data.price,
+        image: data.image,
+        size: data.size,
+        color: data.color,
+      };
+
+      await storePeca.createPeca(peca);
+      context.emit("closeModal", false);
+    };
+
     return {
+      ...toRefs(data),
       handleClickCancel,
+      handleClickSave,
     };
   },
 };
@@ -26,19 +56,42 @@ export default {
     <v-card class="d-flex justify-center pa-6 w-50">
       <v-row justify="center">
         <v-col cols="6">
-          <v-text-field label="Nome" variant="outlined" required></v-text-field>
-          <v-text-field label="Tamanho" variant="outlined" required></v-text-field>
-          <v-text-field label="Cor" variant="outlined" required></v-text-field>
-          <v-text-field label="Preço" variant="outlined" required></v-text-field>
-          <v-text-field label="Imagem" variant="outlined" required></v-text-field>
-          <v-text-field label="Descrição" variant="outlined" required></v-text-field>
-          <v-btn> Cadastrar </v-btn>
+          <v-text-field v-model="name" label="Nome" variant="outlined" required>
+          </v-text-field>
+          <v-text-field
+            v-model="size"
+            label="Tamanho"
+            variant="outlined"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="color"
+            label="Cor"
+            variant="outlined"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="price"
+            label="Preço"
+            variant="outlined"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="image"
+            label="Imagem"
+            variant="outlined"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="description"
+            label="Descrição"
+            variant="outlined"
+            required
+          ></v-text-field>
+          <v-btn @click="handleClickSave()" color="success"> Cadastrar </v-btn>
           <v-btn @click="handleClickCancel()" color="error"> Cancelar </v-btn>
         </v-col>
       </v-row>
     </v-card>
   </v-dialog>
 </template>
-
-<style src="./style.scss" scoped lang="scss">
-</style>

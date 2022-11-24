@@ -12,5 +12,3 @@ export default {
     <input />
   </div>
 </template>
-
-<style lang="scss" scoped src="./style.scss" />

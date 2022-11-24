@@ -9,5 +9,7 @@ export default {
 </script>
 
 <template>
-  <Main />
+  <v-app>
+    <Main />
+  </v-app>
 </template>
