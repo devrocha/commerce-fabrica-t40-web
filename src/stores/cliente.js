@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import clientesApi from "@/api/Clientes.js";
 
-export const usePecaStore = defineStore({
+export const useClienteStore = defineStore({
   id: "Cliente",
   state: () => ({ clientes: [] }),
 
