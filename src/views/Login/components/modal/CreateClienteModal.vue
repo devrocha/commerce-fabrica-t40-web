@@ -1,6 +1,7 @@
 <script>
 import Input from "@/components/Input/Input.vue";
 import { reactive, toRefs } from "@vue/reactivity";
+import { useClienteStore } from "@/stores/cliente";
 
 export default {
   components: {

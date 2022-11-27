@@ -7,11 +7,11 @@ export default {};
     <v-btn variant="flat" color="secondary" @click="handleClickOpenLogin()">
       Login
     </v-btn>
-    <!-- <CreateClienteModal :openModal="openModal" @closeModal="openModal = $event" /> -->
+    <CreateClienteModal :openModal="openModal" @closeModal="openModal = $event" />
     <v-btn variant="flat" color="secondary" @click="handleClickOpenSouCliente()">
       Já sou cliente
     </v-btn>
-    <!-- <CreateClienteModal :openModal="openModal" @closeModal="openModal = $event" /> -->
+    <CreateClienteModal :openModal="openModal" @closeModal="openModal = $event" />
     <v-form v-model="valid">
       <v-container>
         <v-row>
