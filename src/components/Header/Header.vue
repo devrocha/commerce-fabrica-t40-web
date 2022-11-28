@@ -17,9 +17,10 @@ export default {
   <v-toolbar color="#d0bdf4a3" elevation="4">
     <v-row class="d-flex align-center">
       <v-col sm="2" md="3" lg="2" align="center">
-        <v-toolbar-title
-          ><img src="@/assets/images/logo.png"
-        /></v-toolbar-title>
+        <router-link to="/"
+          ><v-toolbar-title
+            ><img src="@/assets/images/logo.png" /></v-toolbar-title
+        ></router-link>
       </v-col>
 
       <v-col sm="7" md="6" lg="8" align="center">
@@ -37,11 +38,6 @@ export default {
             style="text-decoration: none; color: inherit"
           >
             <v-btn>Masculino</v-btn></router-link
-          >
-          <router-link
-            to="/registrar"
-            style="text-decoration: none; color: inherit"
-            ><v-btn>Registrar Peça</v-btn></router-link
           >
         </v-row>
       </v-col>

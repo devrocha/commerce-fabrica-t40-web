@@ -70,4 +70,7 @@ export default {
       </v-col>
     </v-row>
   </v-container>
+  <div class="text-center">
+    <v-pagination v-model="page" :length="6"></v-pagination>
+  </div>
 </template>

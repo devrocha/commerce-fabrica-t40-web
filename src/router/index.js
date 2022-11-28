@@ -10,6 +10,7 @@ import Whatsapp from "@/views/Whatsapp/Whatsapp.vue";
 import Instagram from "@/views/Instagram/Instagram.vue";
 import Facebook from "@/views/Facebook/Facebook.vue";
 import RegistrarPeca from "@/views/Registrar-Peca/Registrar-Peca.vue";
+import Admin from "../components/Admin/Admin.vue";
 import Login from "@/views/Login/Login.vue";
 
 const router = createRouter({
@@ -33,11 +34,11 @@ const router = createRouter({
       component: Masculino,
     },
 
-    // {
-    //   path: "/infantil",
-    //   name: "Infantil",
-    //   component: Infantil,
-    // },
+    {
+      path: "/admin",
+      name: "Admin",
+      component: Admin,
+    },
 
     {
       path: "/outlet",

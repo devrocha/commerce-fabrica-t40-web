@@ -60,6 +60,11 @@ export default {
       :openModal="openModal"
       @closeModal="openModal = $event"
     />
+
+    <v-divider class="my-8"></v-divider>
+    <router-link to="/admin" style="text-decoration: none"
+      ><v-btn>Admin</v-btn></router-link
+    >
   </div>
 </template>
     
