@@ -37,6 +37,7 @@ export default {
 <template>
   <div align="center">
     <v-btn
+      class="my-8"
       variant="outlined"
       color="secondary"
       @click="handleClickOpenModalLogin()"
@@ -47,7 +48,7 @@ export default {
       :openModal="openModal"
       @closeModal="openModal = $event"
     />
-    <p>Já sou cliente</p>
+    <p class="my-8">Já sou cliente</p>
     <v-btn
       variant="outlined"
       color="secondary"

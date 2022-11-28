@@ -53,9 +53,9 @@ export default {
 
 <template>
   <v-dialog v-model="openModal">
-    <v-card class="d-flex justify-center pa-6 w-50">
+    <v-card class="d-flex justify-center pa-6 w-80">
       <v-row justify="center">
-        <v-col cols="6">
+        <v-col cols="6" class="pa-6">
           <v-text-field v-model="name" label="Nome" variant="outlined" required>
           </v-text-field>
           <v-text-field
@@ -88,8 +88,8 @@ export default {
             variant="outlined"
             required
           ></v-text-field>
-          <v-btn @click="handleClickSave()" color="success"> Cadastrar </v-btn>
-          <v-btn @click="handleClickCancel()" color="error"> Cancelar </v-btn>
+            <v-btn @click="handleClickSave()" color="success"> Cadastrar </v-btn>
+            <v-btn @click="handleClickCancel()" color="error"> Cancelar </v-btn>
         </v-col>
       </v-row>
     </v-card>
