@@ -15,7 +15,7 @@ export default {
     const data = reactive({
       nome: "",
       email: "",
-      senha: '',
+      senha: "",
       sexo: "",
       cpf: "",
       cep: "",
@@ -59,12 +59,6 @@ export default {
           <v-text-field v-model="name" label="Nome" variant="outlined" required>
           </v-text-field>
           <v-text-field
-            v-model="nome"
-            label="Nome Completo"
-            variant="outlined"
-            required
-          ></v-text-field>
-          <v-text-field
             v-model="email"
             label="E-mail"
             variant="outlined"
@@ -88,8 +82,12 @@ export default {
             variant="outlined"
             required
           ></v-text-field>
-            <v-btn @click="handleClickSave()" color="success"> Cadastrar </v-btn>
+          <v-row align="center" justify="space-around">
+            <v-btn @click="handleClickSave()" color="success">
+              Cadastrar
+            </v-btn>
             <v-btn @click="handleClickCancel()" color="error"> Cancelar </v-btn>
+          </v-row>
         </v-col>
       </v-row>
     </v-card>
