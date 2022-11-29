@@ -7,7 +7,7 @@ export default {
   setup() {
     const data = reactive({
       input: "",
-      cliente: { role: 'cliente'},
+      cliente: { role: "cliente" },
     });
 
     const clientLogged = useLoginStore();
@@ -64,21 +64,21 @@ export default {
       </v-col>
 
       <v-col sm="3" md="3" lg="2" align="center">
-        <router-link to="/shoppingBag">
+        <router-link to="/shoppingBag" style="text-decoration: none">
           <v-btn>
-            <img
-              src="@/assets/images/shopping-bag.png"
-              width="30"
-              height="30"
-            /> </v-btn
+            <v-icon
+              icon="mdi-shopping-outline"
+              size="30"
+              color="blue-grey darken-2"
+            ></v-icon> </v-btn
         ></router-link>
-        <router-link to="/login">
+        <router-link to="/login" style="text-decoration: none">
           <v-btn>
-            <v-img
-              src="src/assets/images/user.png"
-              width="30"
-              height="30"
-            /> </v-btn
+            <v-icon
+              icon="mdi-account-circle-outline"
+              size="30"
+              color="blue-grey darken-2"
+            ></v-icon> </v-btn
         ></router-link>
       </v-col>
     </v-row>
