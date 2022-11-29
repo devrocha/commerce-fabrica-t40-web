@@ -3,6 +3,7 @@ import { usePecaStore } from "@/stores/peca";
 import { reactive, toRefs } from "@vue/reactivity";
 
 import CreatePecaModal from "@/views/Pecas/components/modal/CreatePecaModal.vue";
+import CreateCategoriaModal from "@/views/Categoria/components/modal/Registrar-Categoria.vue";
 
 export default {
   data() {
@@ -21,6 +22,7 @@ export default {
   },
   components: {
     CreatePecaModal,
+    CreateCategoriaModal,
   },
   setup() {
     const data = reactive({
