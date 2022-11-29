@@ -38,8 +38,6 @@ export default {
   <div align="center">
     <v-btn
       class="my-8"
-      variant="outlined"
-      color="secondary"
       @click="handleClickOpenModalLogin()"
     >
       Cadastro Novo Cliente
@@ -48,10 +46,12 @@ export default {
       :openModal="openModal"
       @closeModal="openModal = $event"
     />
-    <p class="my-8">Já sou cliente</p>
+    <v-card-text
+      class="text-center text-h4 font-italic font-weight-light"
+      style="color: #494d5f"
+      >Já sou cliente</v-card-text
+    >
     <v-btn
-      variant="outlined"
-      color="secondary"
       @click="handleClickOpenSouCliente()"
     >
       Login
