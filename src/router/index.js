@@ -10,8 +10,9 @@ import Whatsapp from "@/views/Whatsapp/Whatsapp.vue";
 import Instagram from "@/views/Instagram/Instagram.vue";
 import Facebook from "@/views/Facebook/Facebook.vue";
 import RegistrarPeca from "@/views/Registrar-Peca/Registrar-Peca.vue";
-import Admin from "../components/Admin/Admin.vue";
+import Admin from "@/components/SideNavigation/SideNav.vue";
 import Login from "@/views/Login/Login.vue";
+import Create from "@/views/Admin/CreatePeca.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -84,6 +85,14 @@ const router = createRouter({
       path: "/login",
       name: "Login",
       component: Login,
+    },
+    {
+      path: "/create",
+      name: "CreatePeca",
+      components: {
+        default: Create,
+        sidebar: Admin,
+      },
     },
 
     // {
