@@ -28,7 +28,7 @@ export default {};
         </v-col>
       </v-row>
 
-      <v-col cols="2" justify="end">
+      <v-col cols="2" justify="end" align="center">
         <p>Redes Sociais</p>
         <router-link to="/instagram" style="text-decoration: none">
           <v-btn variant="plain"
