@@ -14,6 +14,7 @@ export default {
   setup() {
     const data = reactive({
       pecas: [],
+      page: 1
     });
 
     const store = usePecaStore();
