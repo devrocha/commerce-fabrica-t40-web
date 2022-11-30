@@ -36,9 +36,12 @@ export default {
 
 <template>
   <div>
-    <v-btn variant="flat" color="error" @click="handleClickOpenModalCategoria()">
-      Cadastrar Categoria
-    </v-btn>
-    <CreateCategoriaModal :openModal="openModal" @closeModal="openModal = $event" />
+    <v-navigation-drawer v-model="drawer"></v-navigation-drawer>
+    <div>
+      <v-btn variant="flat" color="error" @click="handleClickOpenModalCategoria()">
+        Cadastrar Categoria
+      </v-btn>
+      <CreateCategoriaModal :openModal="openModal" @closeModal="openModal = $event" />
+    </div>
   </div>
 </template>
