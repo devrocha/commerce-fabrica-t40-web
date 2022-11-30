@@ -10,7 +10,7 @@ import Whatsapp from "@/views/Whatsapp/Whatsapp.vue";
 import Instagram from "@/views/Instagram/Instagram.vue";
 import Facebook from "@/views/Facebook/Facebook.vue";
 import RegistrarPeca from "@/views/Registrar-Peca/Registrar-Peca.vue";
-import Admin from "@/components/SideNavigation/SideNav.vue";
+import Admin from "@/components/Admin/Admin.vue";
 import Login from "@/views/Login/Login.vue";
 import Create from "@/views/Admin/CreatePeca.vue";
 import CreateCategoria from "@/views/Admin/CreateCategoria.vue";
