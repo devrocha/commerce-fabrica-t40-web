@@ -13,6 +13,7 @@ import RegistrarPeca from "@/views/Registrar-Peca/Registrar-Peca.vue";
 import Admin from "@/components/SideNavigation/SideNav.vue";
 import Login from "@/views/Login/Login.vue";
 import Create from "@/views/Admin/CreatePeca.vue";
+import CreateCategoria from "@/views/Admin/CreateCategoria.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -91,6 +92,14 @@ const router = createRouter({
       name: "CreatePeca",
       components: {
         default: Create,
+        sidebar: Admin,
+      },
+    },
+    {
+      path: "/createCategoria",
+      name: "CreateCategoria",
+      components: {
+        default: CreateCategoria,
         sidebar: Admin,
       },
     },

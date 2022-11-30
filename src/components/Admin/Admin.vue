@@ -3,7 +3,7 @@ import { usePecaStore } from "@/stores/peca";
 import { reactive, toRefs } from "@vue/reactivity";
 
 import CreatePecaModal from "@/views/Pecas/components/modal/CreatePecaModal.vue";
-import CreateCategoriaModal from "@/views/Categoria/components/modal/Registrar-Categoria.vue";
+import CreateCategoriaModal from "@/views/Categoria/components/modal/CreateCategoriaModal.vue";
 
 export default {
   data() {
@@ -11,6 +11,7 @@ export default {
       drawer: true,
       items: [
         { title: "Cadastrar Peça", icon: "mdi-hanger", path: "/create" },
+        { title: "Cadastrar Categoria", icon: "mdi-shape", path: "/createCategoria" },
         {
           title: "Cadastrar Usuário",
           icon: "mdi-account-star-outline",
