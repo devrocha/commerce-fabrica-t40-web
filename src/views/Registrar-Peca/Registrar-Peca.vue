@@ -38,13 +38,13 @@ export default {
 </script>
 
 <template>
-  <SidebarAdmin></SidebarAdmin>
-  <div>
-    <v-btn variant="flat" color="error" @click="handleClickOpenModal()">
+   <div>
+    <SidebarAdmin></SidebarAdmin>
+    <v-btn @click="handleClickOpenModal()">
       Cadastrar Peça
     </v-btn>
     <CreatePecaModal :openModal="openModal" @closeModal="openModal = $event" />
+    <router-view name="Admin"></router-view>
+    <router-view></router-view>
   </div>
-  <router-view name="Admin"></router-view>
-  <router-view></router-view>
 </template>

@@ -36,13 +36,11 @@ export default {
 </script>
 
 <template>
-  <SidebarAdmin></SidebarAdmin>
   <div>
+    <SidebarAdmin></SidebarAdmin>
     <v-navigation-drawer v-model="drawer"></v-navigation-drawer>
     <div>
       <v-btn
-        variant="flat"
-        color="error"
         @click="handleClickOpenModalCategoria()"
       >
         Cadastrar Categoria
