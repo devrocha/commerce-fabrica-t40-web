@@ -3,10 +3,12 @@ import { usePecaStore } from "@/stores/peca";
 import { reactive, toRefs } from "@vue/reactivity";
 
 import CreatePecaModal from "@/views/Pecas/components/modal/CreatePecaModal.vue";
+import Admin from "../../components/Admin/Admin.vue";
 
 export default {
   components: {
     CreatePecaModal,
+    Admin,
   },
   setup() {
     const data = reactive({
@@ -42,4 +44,6 @@ export default {
     </v-btn>
     <CreatePecaModal :openModal="openModal" @closeModal="openModal = $event" />
   </div>
+  <router-view name="Admin"></router-view>
+  <router-view></router-view>
 </template>
