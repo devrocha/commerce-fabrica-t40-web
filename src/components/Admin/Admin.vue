@@ -6,21 +6,6 @@ import CreatePecaModal from "@/views/Pecas/components/modal/CreatePecaModal.vue"
 import CreateCategoriaModal from "@/views/Categoria/components/modal/CreateCategoriaModal.vue";
 
 export default {
-  data() {
-    return {
-      drawer: true,
-      items: [
-        { title: "Cadastrar Peça", icon: "mdi-hanger", path: "/create" },
-        { title: "Cadastrar Categoria", icon: "mdi-shape", path: "/createCategoria" },
-        {
-          title: "Cadastrar Usuário",
-          icon: "mdi-account-star-outline",
-          path: "/",
-        },
-        { title: "Configurações Conta", icon: "mdi-cog-outline", path: "/" },
-      ],
-    };
-  },
   components: {
     CreatePecaModal,
     CreateCategoriaModal,
@@ -28,6 +13,25 @@ export default {
   setup() {
     const data = reactive({
       openModal: false,
+      drawer: true,
+      items: [
+        { title: "Cadastrar Peça", icon: "mdi-hanger", path: "/create" },
+        {
+          title: "Cadastrar Categoria",
+          icon: "mdi-shape",
+          path: "/createCategoria",
+        },
+        {
+          title: "Cadastrar Usuário",
+          icon: "mdi-account-star-outline",
+          path: "/",
+        },
+        {
+          title: "Configurações Conta",
+          icon: "mdi-cog-outline",
+          path: "/",
+        },
+      ],
     });
 
     const handleClickOpenModal = () => {
@@ -65,19 +69,19 @@ export default {
           link
           :to="item.path"
         >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
+          <template v-slot:prepend>
+            <v-icon :icon="item.icon"></v-icon>
+          </template>
 
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
+          <v-list-item-title v-text="item.title"></v-list-item-title>
         </v-list-item>
       </v-list>
 
       <template v-slot:append>
         <div class="pa-2">
-          <router-link to="/"><v-btn block> Logout </v-btn></router-link>
+          <router-link to="/">
+            <v-btn block> Logout </v-btn>
+          </router-link>
         </div>
       </template>
     </v-navigation-drawer>

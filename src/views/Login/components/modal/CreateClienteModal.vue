@@ -56,7 +56,7 @@ export default {
     <v-card class="d-flex justify-center pa-6 w-80">
       <v-row justify="center">
         <v-col cols="6" class="pa-6">
-          <v-text-field v-model="name" label="Nome" variant="outlined" required>
+          <v-text-field v-model="nome" label="Nome" variant="outlined" required>
           </v-text-field>
           <v-text-field
             v-model="email"

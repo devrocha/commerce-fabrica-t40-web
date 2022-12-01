@@ -92,7 +92,7 @@ const router = createRouter({
       name: "CreatePeca",
       components: {
         default: Create,
-        sidebar: Admin,
+        sidebar: Admin
       },
     },
     {
