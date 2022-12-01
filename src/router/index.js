@@ -8,9 +8,10 @@ import Whatsapp from "@/views/Whatsapp/Whatsapp.vue";
 import Instagram from "@/views/Instagram/Instagram.vue";
 import Facebook from "@/views/Facebook/Facebook.vue";
 import RegistrarPeca from "@/views/Registrar-Peca/Registrar-Peca.vue";
-import Admin from "@/components/Admin/Admin.vue";
+import SidebarAdmin from "../components/SidebarAdmin/SidebarAdmin.vue";
 import Login from "@/views/Login/Login.vue";
 import CreateCategoria from "@/views/Categoria/CreateCategoria.vue";
+import Admin from "@/views/Admin/Admin.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -73,6 +74,17 @@ const router = createRouter({
       name: "Login",
       component: Login,
     },
+    {
+      path: "/admin",
+      name: "Admin",
+      component: Admin,
+      children: [
+        {
+          path: "SidebarAdmin",
+          component: SidebarAdmin,
+        },
+      ],
+    },
 
     {
       path: "/registrar",
@@ -80,8 +92,8 @@ const router = createRouter({
       component: RegistrarPeca,
       children: [
         {
-          path: "admin",
-          component: Admin,
+          path: "SidebarAdmin",
+          component: SidebarAdmin,
         },
       ],
     },
@@ -89,10 +101,13 @@ const router = createRouter({
     {
       path: "/createCategoria",
       name: "CreateCategoria",
-      components: {
-        default: CreateCategoria,
-        sidebar: Admin,
-      },
+      component: CreateCategoria,
+      children: [
+        {
+          path: "SidebarAdmin",
+          component: SidebarAdmin,
+        },
+      ],
     },
   ],
 });

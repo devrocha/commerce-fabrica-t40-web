@@ -59,7 +59,9 @@ export default {
 <template>
   <div>
     <v-app-bar color="primary">
-      <v-app-bar-title>Administrador</v-app-bar-title>
+      <router-link to="/admin" style="text-decoration: none">
+        <v-app-bar-title>Administrador</v-app-bar-title>
+      </router-link>
     </v-app-bar>
     <v-navigation-drawer color="secondary" permanent>
       <v-list>

@@ -3,12 +3,12 @@ import { usePecaStore } from "@/stores/peca";
 import { reactive, toRefs } from "@vue/reactivity";
 
 import CreatePecaModal from "@/views/Pecas/components/modal/CreatePecaModal.vue";
-import Admin from "../../components/Admin/Admin.vue";
+import SidebarAdmin from "@/components/SidebarAdmin/SidebarAdmin.vue";
 
 export default {
   components: {
     CreatePecaModal,
-    Admin,
+    SidebarAdmin,
   },
   setup() {
     const data = reactive({
@@ -38,6 +38,7 @@ export default {
 </script>
 
 <template>
+  <SidebarAdmin></SidebarAdmin>
   <div>
     <v-btn variant="flat" color="error" @click="handleClickOpenModal()">
       Cadastrar Peça
