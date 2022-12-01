@@ -80,7 +80,7 @@ const router = createRouter({
       component: RegistrarPeca,
       children: [
         {
-          path: "/admin",
+          path: "admin",
           component: Admin,
         },
       ],

@@ -15,7 +15,7 @@ export default {
       openModal: false,
       drawer: true,
       items: [
-        { title: "Cadastrar Peça", icon: "mdi-hanger", path: "/create" },
+        { title: "Cadastrar Peça", icon: "mdi-hanger", path: "/registrar" },
         {
           title: "Cadastrar Categoria",
           icon: "mdi-shape",
