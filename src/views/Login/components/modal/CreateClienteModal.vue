@@ -35,7 +35,14 @@ export default {
         senha: data.senha,
         sexo: data.sexo,
         cpf: data.cpf,
-        endereço: data.endereco,
+        endereco: {
+          estado: data.endereco.estado,
+          cidade: data.cidade,
+          bairro: data.bairro,
+          rua: data.rua,
+          numero: data.numero,
+        },
+        role: data.role,
       };
 
       await storeCliente.createCliente(cliente);
@@ -77,8 +84,39 @@ export default {
             required
           ></v-text-field>
           <v-text-field
-            v-model="endereco"
-            label="Endereço"
+            v-model="estado"
+            label="Estado"
+            variant="outlined"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="cidade"
+            label="Cidade"
+            variant="outlined"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="bairro"
+            label="Bairro"
+            variant="outlined"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="rua"
+            label="Rua"
+            variant="outlined"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-model="numero"
+            label="Número"
+            variant="outlined"
+            required
+          ></v-text-field>
+          <v-text-field
+            v-if="cliente?.role == 'admin'"
+            v-model="role"
+            label="Role"
             variant="outlined"
             required
           ></v-text-field>
