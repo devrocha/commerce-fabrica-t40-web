@@ -59,11 +59,11 @@ export default {
 <template>
   <div>
     <v-app-bar color="primary">
-      <router-link to="/admin" style="text-decoration: none">
+      <router-link to="/admin" style="text-decoration: none; color: inherit">
         <v-app-bar-title>Administrador</v-app-bar-title>
       </router-link>
     </v-app-bar>
-    <v-navigation-drawer color="secondary" permanent>
+    <v-navigation-drawer color="teal" permanent>
       <v-list>
         <v-list-item
           v-for="item in items"

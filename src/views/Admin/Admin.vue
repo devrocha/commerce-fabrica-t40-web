@@ -11,6 +11,8 @@ export default {
 </script>
 
 <template>
-  <SidebarAdmin></SidebarAdmin>
-  <h2>Tela Principal do Admin</h2>
+  <div>
+    <SidebarAdmin></SidebarAdmin>
+    <h2>Tela Principal do Admin</h2>
+  </div>
 </template>
