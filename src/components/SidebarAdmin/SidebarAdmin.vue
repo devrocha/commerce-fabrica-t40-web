@@ -1,6 +1,7 @@
 <script>
 import { usePecaStore } from "@/stores/peca";
 import { reactive, toRefs } from "@vue/reactivity";
+import { useCategoriaStore } from "@/stores/categoria.js";
 
 import CreatePecaModal from "@/views/Pecas/components/modal/CreatePecaModal.vue";
 import CreateCategoriaModal from "@/views/Categoria/components/modal/CreateCategoriaModal.vue";
@@ -48,9 +49,23 @@ export default {
       await store.createPeca(peca);
     };
 
+    const handleClickOpenModalCategoria = () => {
+      data.openModal = !data.openModal;
+    };
+
+    const storeCategoria = useCategoriaStore();
+
+    const createCategoria = async () => {
+      const categoria = {
+        type: data.type,
+        gender: data.gender,
+      };
+      await storeCategoria.createCategoria(categoria);
+    };
     return {
       ...toRefs(data),
       handleClickOpenModal,
+      handleClickOpenModalCategoria,
     };
   },
 };

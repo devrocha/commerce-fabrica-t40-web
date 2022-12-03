@@ -23,6 +23,7 @@ export default {
     const createCategoria = async () => {
       const categoria = {
         type: data.type,
+        gender: data.gender,
       };
       await storeCat.createCategoria(categoria);
     };
@@ -38,11 +39,8 @@ export default {
 <template>
   <div>
     <SidebarAdmin></SidebarAdmin>
-    <v-navigation-drawer v-model="drawer"></v-navigation-drawer>
     <div>
-      <v-btn
-        @click="handleClickOpenModalCategoria()"
-      >
+      <v-btn @click="handleClickOpenModalCategoria()">
         Cadastrar Categoria
       </v-btn>
       <CreateCategoriaModal

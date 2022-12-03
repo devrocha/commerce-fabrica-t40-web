@@ -11,9 +11,9 @@ export const useCategoriaStore = defineStore({
       this.categorias = response.data.data;
     },
 
-    async createCategorias(categoria) {
-      const response = await categoriasApi.createCategorias(categoria)
-      return response
-    }
+    async createCategoria(categoria) {
+      const response = await categoriasApi.createCategorias(categoria);
+      return response;
+    },
   },
 });

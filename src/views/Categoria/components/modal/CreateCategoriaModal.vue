@@ -13,8 +13,8 @@ export default {
   },
   setup(_, context) {
     const data = reactive({
-      type: String,
-      gender: String,
+      type: "",
+      gender: "",
     });
 
     const storeCategoria = useCategoriaStore();
