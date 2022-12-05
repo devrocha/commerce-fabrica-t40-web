@@ -15,7 +15,7 @@ export default {
     const data = reactive({
       name: "",
       description: "",
-      price: '',
+      price: "",
       image: "",
       size: "",
       color: "",
@@ -53,7 +53,7 @@ export default {
 
 <template>
   <v-dialog v-model="openModal">
-    <v-card class="d-flex justify-center pa-6 w-50">
+    <v-card class="d-flex justify-center pa-6 w-70">
       <v-row justify="center">
         <v-col cols="6">
           <v-text-field v-model="name" label="Nome" variant="outlined" required>
@@ -88,8 +88,12 @@ export default {
             variant="outlined"
             required
           ></v-text-field>
-          <v-btn @click="handleClickSave()" color="success"> Cadastrar </v-btn>
-          <v-btn @click="handleClickCancel()" color="error"> Cancelar </v-btn>
+          <v-row align="center" justify="space-around">
+            <v-btn @click="handleClickSave()" color="success">
+              Cadastrar
+            </v-btn>
+            <v-btn @click="handleClickCancel()" color="error"> Cancelar </v-btn>
+          </v-row>
         </v-col>
       </v-row>
     </v-card>
