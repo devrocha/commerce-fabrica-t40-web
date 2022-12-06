@@ -1,106 +1,80 @@
 <script>
-import { useClienteStore } from "@/stores/cliente";
+import { useLoginStore } from "@/stores/login";
 import { reactive, toRefs } from "@vue/reactivity";
+import { useRouter } from "vue-router";
 
-import CreateClienteModal from "@/views/Login/components/modal/CreateClienteModal.vue";
+import Input from "@/components/Input/Input.vue";
+import Button from "@/components/Button/Button.vue";
+import { onMounted, watch } from "@vue/runtime-core";
 
 export default {
   components: {
-    CreateClienteModal,
+    Input,
+    Button,
   },
   setup() {
     const data = reactive({
-      openModal: false,
+      email: "",
+      senha: "",
+      clienteLogado: false,
     });
 
-    const handleClickOpenModalLogin = () => {
-      data.openModal = !data.openModal;
+    onMounted(() => {
+      if (store.cliente.role) {
+        data.clienteLogado = true;
+      }
+    });
+
+    const store = useLoginStore();
+    const router = useRouter();
+
+    const hadleLogin = async () => {
+      await store.loginCliente(data.email, data.senha);
+
+      if (store.cliente.role == "admin") {
+        router.push("/admin");
+      } else {
+        router.push("/");
+      }
     };
 
-    const store = useClienteStore();
-
-    const createCliente = async () => {
-      const cliente = {
-        nome: data.nome,
-      };
-      await store.createCliente(cliente);
+    const handleLogout = () => {
+      store.logout();
+      data.clienteLogado = false
+      router.push("/");
     };
+
+    // watch(store.cliente, () => data.clienteLogado = false)
 
     return {
       ...toRefs(data),
-      handleClickOpenModalLogin,
+      hadleLogin,
+      handleLogout,
     };
   },
 };
 </script>
 
 <template>
-  <div align="center">
-    <v-btn
-      class="my-8"
-      @click="handleClickOpenModalLogin()"
-    >
-      Cadastro Novo Cliente
-    </v-btn>
-    <CreateClienteModal
-      :openModal="openModal"
-      @closeModal="openModal = $event"
-    />
-    <v-card-text
-      class="text-center text-h4 font-italic font-weight-light"
-      style="color: #494d5f"
-      >Já sou cliente</v-card-text
-    >
-    <v-btn
-      @click="handleClickOpenSouCliente()"
-    >
-      Login
-    </v-btn>
-    <CreateClienteModal
-      :openModal="openModal"
-      @closeModal="openModal = $event"
-    />
-
-    <v-divider class="my-8"></v-divider>
-    <router-link to="/admin" style="text-decoration: none"
-      ><v-btn>Admin</v-btn></router-link
-    >
-  </div>
+  <v-row class="d-flex align-center justify-center" v-if="!clienteLogado">
+    <v-col cols="3">
+      <v-text-field label="Email" variant="outlined" v-model="email" />
+      <v-text-field
+        label="Senha"
+        variant="outlined"
+        v-model="senha"
+        type="password"
+      />
+      <Button label="Logar" color="primary" @click="hadleLogin()" />
+    </v-col>
+  </v-row>
+  <v-row class="d-flex align-center justify-center" v-else>
+    <Button label="Logout" color="error" @click="handleLogout()" />
+  </v-row>
 </template>
-    
-    <!-- <v-form v-model="valid">
-      <v-container>
-        <v-row>
-          <v-col cols="12" md="4">
-            <v-text-field
-              v-model="firstname"
-              :rules="nameRules"
-              :counter="10"
-              label="Nome"
-              required
-            ></v-text-field>
-          </v-col>
-  
-          <v-col cols="12" md="4">
-            <v-text-field
-              v-model="lastname"
-              :rules="nameRules"
-              :counter="10"
-              label="Sobrenome"
-              required
-            ></v-text-field>
-          </v-col>
-  
-          <v-col cols="12" md="4">
-            <v-text-field
-              v-model="email"
-              :rules="emailRules"
-              label="E-mail"
-              required
-            ></v-text-field>
-          </v-col>
-          <v-btn class="mr-4" type="submit"> Enviar </v-btn>
-        </v-row>
-      </v-container>
-    </v-form> -->
- 
+
+<style scoped lang="scss">
+.decoration {
+  text-decoration: none;
+}
+</style>

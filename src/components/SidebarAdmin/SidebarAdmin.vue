@@ -2,6 +2,8 @@
 import { usePecaStore } from "@/stores/peca";
 import { reactive, toRefs } from "@vue/reactivity";
 import { useCategoriaStore } from "@/stores/categoria.js";
+import { useLoginStore } from "@/stores/login.js";
+import { useRouter } from "vue-router";
 
 import CreatePecaModal from "@/views/Pecas/components/modal/CreatePecaModal.vue";
 import CreateCategoriaModal from "@/views/Categoria/components/modal/CreateCategoriaModal.vue";
@@ -40,6 +42,9 @@ export default {
     };
 
     const store = usePecaStore();
+    const storeCategoria = useCategoriaStore();
+    const storeLogin = useLoginStore();
+    const router = useRouter();
 
     const createPeca = async () => {
       const peca = {
@@ -53,8 +58,6 @@ export default {
       data.openModal = !data.openModal;
     };
 
-    const storeCategoria = useCategoriaStore();
-
     const createCategoria = async () => {
       const categoria = {
         type: data.type,
@@ -62,10 +65,17 @@ export default {
       };
       await storeCategoria.createCategoria(categoria);
     };
+
+    const handleLogout = () => {
+      storeLogin.logout();
+      router.push("/login");
+    };
+
     return {
       ...toRefs(data),
       handleClickOpenModal,
       handleClickOpenModalCategoria,
+      handleLogout,
     };
   },
 };
@@ -96,9 +106,7 @@ export default {
 
       <template v-slot:append>
         <div class="pa-2">
-          <router-link to="/">
-            <v-btn block> Logout </v-btn>
-          </router-link>
+          <v-btn @click="handleLogout()" block> Logout </v-btn>
         </div>
       </template>
     </v-navigation-drawer>

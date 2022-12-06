@@ -1,21 +1,38 @@
 <script>
 import { reactive, toRefs } from "@vue/reactivity";
 import { useLoginStore } from "@/stores/login.js";
-import { onBeforeMount, onMounted } from "@vue/runtime-core";
+import { onMounted, watch } from "@vue/runtime-core";
 
 export default {
   setup() {
     const data = reactive({
       input: "",
-      cliente: { role: "cliente" },
+      clienteLogado: false,
     });
 
-    const clientLogged = useLoginStore();
+    const store = useLoginStore();
 
-    onBeforeMount(async () => {
-      await clientLogged.loginCliente();
-      data.cliente = clientLogged.cliente;
+    onMounted(() => {
+      if (store.cliente.role == "admin") {
+        data.clienteLogado = true;
+      } else {
+        data.clienteLogado = false;
+      }
     });
+
+    const cliente = JSON.parse(localStorage.getItem("cliente"));
+
+    console.log(store.cliente);
+
+    watch(
+      () => store.cliente,
+      () => {
+        if (store.cliente.role !== "cliente") {
+          data.clienteLogado = !data.clienteLogado;
+        }
+      },
+      { deep: true }
+    );
 
     return {
       ...toRefs(data),
@@ -25,7 +42,7 @@ export default {
 </script>
 
 <template>
-  <v-toolbar color="#d0bdf4a3" elevation="4">
+  <v-toolbar color="#d0bdf4a3" elevation="4" v-show="!clienteLogado">
     <v-row class="d-flex align-center">
       <v-col sm="2" md="3" lg="2" align="center">
         <router-link to="/"
@@ -40,25 +57,15 @@ export default {
             ><v-btn>Home</v-btn></router-link
           >
           <router-link
-            v-if="cliente?.role == 'cliente'"
             to="/feminino"
             style="text-decoration: none; color: inherit"
             ><v-btn>Feminino</v-btn></router-link
           >
           <router-link
-            v-if="cliente?.role == 'cliente'"
             to="/masculino"
             style="text-decoration: none; color: inherit"
           >
             <v-btn>Masculino</v-btn></router-link
-          >
-
-          <router-link
-            v-if="cliente?.role == 'admin'"
-            to="/cadastrarPeca"
-            style="text-decoration: none; color: inherit"
-          >
-            <v-btn> Cadastrar Peça </v-btn></router-link
           >
         </v-row>
       </v-col>

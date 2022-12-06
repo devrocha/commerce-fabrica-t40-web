@@ -2,6 +2,9 @@
 export default {
   props: {
     label: String,
+    variant: String,
+    type: String,
+    modelValue: String,
   },
 };
 </script>
@@ -9,6 +12,9 @@ export default {
 <template>
   <div>
     <label>{{ label }}</label>
-    <input />
+    <v-text-field
+      :variant="variant"
+      :type="type"
+    />
   </div>
 </template>
