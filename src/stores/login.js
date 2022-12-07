@@ -9,7 +9,8 @@ export const useLoginStore = defineStore({
     actions: {
         async loginCliente(email, senha) {
             const response = await loginApi.login({ email, senha })
-            this.cliente = response.data.data.clienteDB
+            console.log(response.data.data)
+            this.cliente = response.data.data.cliente
         },
 
         logout() {

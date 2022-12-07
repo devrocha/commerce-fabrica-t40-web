@@ -5,13 +5,13 @@ import { conversion } from "@/utils/index";
 import { computed } from "@vue/reactivity";
 import Image from "@/components/Image/Image.vue";
 import Button from "@/components/Button/Button.vue";
-import Card from "@/components/Card/Card.vue";
+import CardPeca from "@/components/CardPeca/CardPeca.vue";
 
 export default {
   components: {
     Image,
     Button,
-    Card,
+    CardPeca,
   },
 
   setup() {
@@ -50,7 +50,7 @@ export default {
   <v-container>
     <v-row>
       <v-col lg="2" v-for="(peca, index) in pecas" :key="index">
-        <Card
+        <CardPeca
           :src="peca.image"
           :title="peca.name"
           :price="peca.price"

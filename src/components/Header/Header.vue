@@ -20,9 +20,7 @@ export default {
       }
     });
 
-    const cliente = JSON.parse(localStorage.getItem("cliente"));
-
-    console.log(store.cliente);
+    // const cliente = JSON.parse(localStorage.getItem("cliente"));
 
     watch(
       () => store.cliente,

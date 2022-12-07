@@ -1,9 +1,8 @@
 <script>
-import { usePecaStore } from "@/stores/peca"; //importar dentro do componente
-import { onMounted, reactive, toRefs } from "@vue/runtime-core";
+import { useShoppingBag } from "@/stores/shoppingBag.js"; //importar dentro do componente
+import { onMounted, reactive, toRefs, watch } from "@vue/runtime-core";
 import { conversion } from "@/utils/index";
 import Image from "@/components/Image/Image.vue";
-import { computed } from "@vue/reactivity";
 
 export default {
   components: {
@@ -12,31 +11,30 @@ export default {
 
   setup() {
     const data = reactive({
-      pecas: [],
+      pecasBag: [],
       value: 100,
     });
 
-    const store = usePecaStore();
-
-    onMounted(async () => {
-      await store.listPecas();
-      data.pecas = store.pecas;
-      computedLession();
+    onMounted(() => {
+      data.pecasBag = store.shoppingBag;
     });
 
-    const computedPecaValue = computed(() => {
-      return data.value >= 100 ? "Preço justo" : "Em oferta";
-    });
+    const store = useShoppingBag();
 
-    const computedLession = () => {
-      const pecaPrice = data.pecas.filter((peca) => peca.price > 100);
-    };
+    const handleRemovePeca = (index) => {
+      store.removePecaInBag(index)
+    }
+
+    watch(
+      () => store.shoppingBag,
+      (value) => (data.pecasBag = value)
+    );
 
     return {
       ...toRefs(data),
       store,
       conversion,
-      computedPecaValue,
+      handleRemovePeca
     };
   },
 };
@@ -46,17 +44,24 @@ export default {
   <h2 class="display-2 mb-4">Carrinho</h2>
   <div>
     <v-row no-gutters>
-      <v-col cols="12" v-for="(peca, index) in pecas" :key="index" class="mb-2">
+      <v-col
+        cols="12"
+        v-for="(pecaBag, index) in pecasBag"
+        :key="index"
+        class="mb-2"
+      >
         <v-card class="pa-3">
           <div class="d-flex justify-space-between align-center">
             <div>
               <v-card-title>
-                {{ peca.name }}
+                {{ pecaBag.name }}
               </v-card-title>
             </div>
-            <v-img :src="peca.image" height="50px"></v-img>
+            <v-img :src="pecaBag.image" height="50px"></v-img>
             <div>
-              <v-card-subtitle>R$ {{ conversion(peca.price) }}</v-card-subtitle>
+              <v-card-subtitle
+                >R$ {{ conversion(pecaBag.price) }}</v-card-subtitle
+              >
             </div>
 
             <div>
@@ -66,7 +71,7 @@ export default {
               </v-card-action>
             </div>
             <v-card-action>
-              <v-btn><img src="@/assets/images/trash.png" /></v-btn>
+              <v-btn @click="handleRemovePeca(index)"><img src="@/assets/images/trash.png" /></v-btn>
             </v-card-action>
           </div>
         </v-card>

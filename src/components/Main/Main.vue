@@ -13,7 +13,14 @@ export default {
 <template>
   <v-main>
     <Header />
-    <RouterView />
+    <RouterView class="routerView"/>
     <Footer />
   </v-main>
 </template>
+
+<style lange="scss">
+  .routerView {
+    height: 100%;
+    max-height: 800px;
+  }
+</style>

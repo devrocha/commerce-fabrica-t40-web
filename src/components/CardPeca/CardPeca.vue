@@ -1,6 +1,7 @@
 <script>
 import Button from "@/components/Button/Button.vue";
 import { conversion } from "@/utils/index";
+import { useShoppingBag } from "@/stores/shoppingBag.js";
 
 export default {
   components: {
@@ -23,11 +24,19 @@ export default {
       type: String,
       default: "",
     },
+    peca: Object
   },
 
-  setup() {
+  setup(props) {
+    const storeShoppingBag = useShoppingBag();
+
+    const handleClickBuy = () => {
+      storeShoppingBag.addPecaInBag(props.peca);
+    };
+
     return {
       conversion,
+      handleClickBuy,
     };
   },
 };
@@ -51,7 +60,12 @@ export default {
       </v-row>
     </v-card-text>
     <v-card-actions>
-      <Button variant="text" label="Comprar" color="#AA8BD4" />
+      <Button
+        variant="text"
+        label="Comprar"
+        color="#AA8BD4"
+        @click="handleClickBuy()"
+      />
       <Button variant="text" label="Favoritar" color="#46AFA5" />
     </v-card-actions>
   </v-card>

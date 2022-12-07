@@ -40,7 +40,7 @@ export default {
 
     const handleLogout = () => {
       store.logout();
-      data.clienteLogado = false
+      data.clienteLogado = false;
       router.push("/");
     };
 
@@ -56,21 +56,23 @@ export default {
 </script>
 
 <template>
-  <v-row class="d-flex align-center justify-center" v-if="!clienteLogado">
-    <v-col cols="3">
-      <v-text-field label="Email" variant="outlined" v-model="email" />
-      <v-text-field
-        label="Senha"
-        variant="outlined"
-        v-model="senha"
-        type="password"
-      />
-      <Button label="Logar" color="primary" @click="hadleLogin()" />
-    </v-col>
-  </v-row>
-  <v-row class="d-flex align-center justify-center" v-else>
-    <Button label="Logout" color="error" @click="handleLogout()" />
-  </v-row>
+  <v-container fluid class="d-flex align-center" >
+    <v-row class="d-flex justify-center" v-if="!clienteLogado">
+      <v-col cols="3">
+        <v-text-field label="Email" variant="outlined" v-model="email" />
+        <v-text-field
+          label="Senha"
+          variant="outlined"
+          v-model="senha"
+          type="password"
+        />
+        <Button label="Logar" color="primary" @click="hadleLogin()" />
+      </v-col>
+    </v-row>
+    <v-row class="d-flex align-center justify-center" v-else>
+      <Button label="Logout" color="error" @click="handleLogout()" />
+    </v-row>
+  </v-container>
 </template>
 
 <style scoped lang="scss">

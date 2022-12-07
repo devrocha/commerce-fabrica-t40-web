@@ -1,6 +1,6 @@
 <script>
 import Button from "@/components/Button/Button.vue";
-import Card from "@/components/Card/Card.vue";
+import CardPeca from "@/components/CardPeca/CardPeca.vue";
 import { usePecaStore } from "@/stores/peca";
 import { reactive, toRefs } from "@vue/reactivity";
 import { onMounted } from "@vue/runtime-core";
@@ -8,13 +8,13 @@ import { onMounted } from "@vue/runtime-core";
 export default {
   components: {
     Button,
-    Card,
+    CardPeca,
   },
 
   setup() {
     const data = reactive({
       pecas: [],
-      page: 1
+      page: 1,
     });
 
     const store = usePecaStore();
@@ -23,8 +23,6 @@ export default {
       await store.listPecas();
       data.pecas = store.pecas;
     });
-
-    console.log(store.pecas);
 
     return {
       ...toRefs(data),
@@ -62,7 +60,8 @@ export default {
     <!-- pecas -->
     <v-row>
       <v-col lg="2" v-for="(peca, index) in pecas" :key="index">
-        <Card
+        <CardPeca
+          :peca="peca"
           :src="peca.image"
           :title="peca.name"
           :price="peca.price"
