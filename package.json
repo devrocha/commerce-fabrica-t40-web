@@ -1,6 +1,6 @@
 {
   "name": "fabrica-commerce-40-web",
-  "version": "0.0.0",
+  "version": "1.0-BETA.1",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
