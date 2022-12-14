@@ -52,7 +52,7 @@ export default {
 </script>
 
 <template>
-	<v-dialog v-model="modelValue">
+	<v-dialog v-bind="modelValue">
 		<v-card class="d-flex justify-center pa-6 w-70">
 			<v-row justify="center">
 				<v-col cols="6">
