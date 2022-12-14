@@ -2,12 +2,10 @@
 import { usePecaStore } from "@/stores/peca";
 import { reactive, toRefs } from "@vue/reactivity";
 
-import CreatePecaModal from "@/views/Pecas/components/modal/CreatePecaModal.vue";
 import SidebarAdmin from "@/components/SidebarAdmin/SidebarAdmin.vue";
 
 export default {
 	components: {
-		CreatePecaModal,
 		SidebarAdmin,
 	},
 	setup() {
@@ -91,10 +89,6 @@ export default {
 				</v-col>
 			</v-row>
 		</v-container>
-		<!-- <CreatePecaModal
-			:openModal="openModal"
-			@closeModal="openModal = $event"
-		/> -->
 		<router-view name="Admin"></router-view>
 		<router-view></router-view>
 	</div>

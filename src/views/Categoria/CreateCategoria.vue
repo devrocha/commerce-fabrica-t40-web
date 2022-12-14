@@ -2,11 +2,9 @@
 import { useCategoriaStore } from "@/stores/categoria";
 import { reactive, toRefs } from "@vue/reactivity";
 
-import CreateCategoriaModal from "@/views/Categoria/components/modal/CreateCategoriaModal.vue";
 import SidebarAdmin from "@/components/SidebarAdmin/SidebarAdmin.vue";
 export default {
   components: {
-    CreateCategoriaModal,
     SidebarAdmin,
   },
   setup() {
@@ -39,14 +37,5 @@ export default {
 <template>
   <div>
     <SidebarAdmin></SidebarAdmin>
-    <div>
-      <!-- <v-btn @click="handleClickOpenModalCategoria()">
-        Cadastrar Categoria
-      </v-btn> -->
-      <!-- <CreateCategoriaModal
-        :openModal="openModal"
-        @closeModal="openModal = $event"
-      /> -->
-    </div>
   </div>
 </template>

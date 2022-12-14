@@ -5,12 +5,7 @@ import { useCategoriaStore } from "@/stores/categoria.js";
 import { useLoginStore } from "@/stores/login.js";
 import { useRouter } from "vue-router";
 
-import CreatePecaModal from "@/views/Pecas/components/modal/CreatePecaModal.vue";
-
 export default {
-  components: {
-    CreatePecaModal,
-  },
   setup() {
     const data = reactive({
       openModal: false,
@@ -112,10 +107,4 @@ export default {
       <v-card></v-card>
     </v-main>
   </div>
-  <!-- <div>
-    <v-btn variant="flat" color="error" @click="handleClickOpenModal()">
-      Cadastrar Peça
-    </v-btn>
-    <CreatePecaModal :openModal="openModal" @closeModal="openModal = $event" />
-  </div> -->
 </template>
