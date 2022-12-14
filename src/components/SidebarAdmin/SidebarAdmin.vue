@@ -6,12 +6,10 @@ import { useLoginStore } from "@/stores/login.js";
 import { useRouter } from "vue-router";
 
 import CreatePecaModal from "@/views/Pecas/components/modal/CreatePecaModal.vue";
-import CreateCategoriaModal from "@/views/Categoria/components/modal/CreateCategoriaModal.vue";
 
 export default {
   components: {
     CreatePecaModal,
-    CreateCategoriaModal,
   },
   setup() {
     const data = reactive({

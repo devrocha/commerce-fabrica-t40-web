@@ -40,13 +40,13 @@ export default {
   <div>
     <SidebarAdmin></SidebarAdmin>
     <div>
-      <v-btn @click="handleClickOpenModalCategoria()">
+      <!-- <v-btn @click="handleClickOpenModalCategoria()">
         Cadastrar Categoria
-      </v-btn>
-      <CreateCategoriaModal
+      </v-btn> -->
+      <!-- <CreateCategoriaModal
         :openModal="openModal"
         @closeModal="openModal = $event"
-      />
+      /> -->
     </div>
   </div>
 </template>
